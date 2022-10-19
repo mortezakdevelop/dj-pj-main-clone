@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Online Music Player</string>
+    <string name="notification_channel_name">Music Channel</string>
+    <string name="notification_channel_description">Shows the currently playing music</string>
+    <string name="genre">Genre</string>
+    <string name="songs">Songs</string>
+    <string name="home">Home</string>
+    <string name="something_is_wrong_try_later">Something is wrong try later</string>
+    <string name="please_fill_comment">لطفا ابتدا کامنت رو وارد نمایید</string>
+</resources>

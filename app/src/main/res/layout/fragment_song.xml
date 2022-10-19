@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSongName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="SONG NAME"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivSongImage"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="@dimen/x2"
+                android:background="@color/darkBackground"
+                app:layout_constraintTop_toBottomOf="@id/tvSongName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCurTime"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:text="00:00"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="@dimen/x2"
+                app:layout_constraintEnd_toStartOf="@+id/tvSongDuration"
+                app:layout_constraintStart_toEndOf="@+id/tvCurTime"
+                app:layout_constraintTop_toBottomOf="@+id/ivSongImage" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSongDuration"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="00:00"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+            <ImageView
+                android:id="@+id/ivPlayPauseDetail"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/circle_drawable"
+                android:src="@drawable/ic_play"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+            <ImageView
+                android:id="@+id/ivSkipPrevious"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_skip_previous"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseDetail"
+                app:layout_constraintEnd_toStartOf="@+id/ivPlayPauseDetail"
+                app:layout_constraintTop_toTopOf="@+id/ivPlayPauseDetail" />
+
+            <ImageView
+                android:id="@+id/ivSkip"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_skip"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseDetail"
+                app:layout_constraintStart_toEndOf="@+id/ivPlayPauseDetail"
+                app:layout_constraintTop_toTopOf="@+id/ivPlayPauseDetail" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.7" />
+
+
+            <ImageView
+                android:id="@+id/imgLike"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/x2"
+                android:layout_marginTop="@dimen/x2"
+                android:src="@drawable/ic_like"
+                app:layout_constraintBottom_toBottomOf="@id/ivSkipPrevious"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivSkipPrevious" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtLikeCount"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/imgLike"
+                app:layout_constraintEnd_toEndOf="@id/imgLike"
+                app:layout_constraintStart_toStartOf="@id/imgLike"
+                android:layout_height="wrap_content"/>
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:src="@drawable/send"
+                android:id="@+id/imgSendComment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLikeCount"
+                android:layout_height="50dp"/>
+
+            <EditText
+                android:id="@+id/edtComment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x1"
+                app:layout_constraintEnd_toStartOf="@+id/imgSendComment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLikeCount" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/recyclerComments"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/edtComment"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

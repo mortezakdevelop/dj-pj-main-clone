@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.plcoding.spotifycloneyt.ui.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_genreFragment"
+            app:destination="@id/genreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/songFragment"
+        android:name="com.plcoding.spotifycloneyt.ui.fragments.SongFragment"
+        android:label="SongFragment" />
+
+    <action android:id="@+id/globalActionToSongFragment"
+        app:destination="@id/songFragment" />
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="com.plcoding.spotifycloneyt.ui.fragments.GenreFragment"
+        android:label="GenreFragment" >
+        <action
+            android:id="@+id/action_genreFragment_to_genreSongsFragment"
+            app:destination="@id/genreSongsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/genreSongsFragment"
+        android:name="com.plcoding.spotifycloneyt.ui.fragments.GenreSongsFragment"
+        android:label="GenreSongsFragment" />
+</navigation>
